@@ -635,10 +635,19 @@ Crafty.extend({
 	* @see Crafty.init
 	*/
 	stop: function() {
-		this.timer.stop();
-		Crafty.stage.elem.parentNode.removeChild(Crafty.stage.elem);
+    Crafty('*').each(function(e) {
+        e.destroy();
+    });
+
+    entities = {};
+    handlers = {};
+    GUID     = 0 ;
+
+    this.timer.stop();
+    this.trigger("Stop");
+    Crafty.stage.elem.parentNode.removeChild(Crafty.stage.elem);
 		
-		return this;
+    return this;
 	},
 	
 	/**@
