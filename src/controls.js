@@ -123,6 +123,19 @@ Crafty.bind("Load", function() {
 	Crafty.addEvent(this, Crafty.stage.elem, "touchend", Crafty.mouseDispatch);
 });
 
+Crafty.bind("Stop", function() {
+  Crafty.removeEvent(this, "keydown", Crafty.keyboardDispatch);
+  Crafty.removeEvent(this, "keyup", Crafty.keyboardDispatch);
+  
+  Crafty.removeEvent(this, Crafty.stage.elem, "mousedown", Crafty.mouseDispatch);
+  Crafty.removeEvent(this, Crafty.stage.elem, "mouseup", Crafty.mouseDispatch);
+  Crafty.removeEvent(this, Crafty.stage.elem, "mousemove", Crafty.mouseDispatch);
+
+  Crafty.removeEvent(this, Crafty.stage.elem, "touchstart", Crafty.mouseDispatch);
+  Crafty.removeEvent(this, Crafty.stage.elem, "touchmove", Crafty.mouseDispatch);
+  Crafty.removeEvent(this, Crafty.stage.elem, "touchend", Crafty.mouseDispatch);
+});
+
 /**@
 * #Mouse
 * @category Input
