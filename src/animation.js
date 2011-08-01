@@ -70,14 +70,15 @@ Crafty.c("SpriteAnimation", {
 			i = fromx;
 			reel = [];
 			tile = this.__tile;
+			y    = y * this.__tileh;
 				
 			if (tox > fromx) {
 				for(;i<=tox;i++) {
-					reel.push([i * tile, y * tile]);
+					reel.push([i * tile, y]);
 				}
 			} else {
 				for(;i>=tox;i--) {
-					reel.push([i * tile, y * tile]);
+					reel.push([i * tile, y]);
 				}
 			}
 			
